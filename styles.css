@@ -1,0 +1,246 @@
+:root{
+  --bg: #0f1724;
+  --card: #0f1724;
+  --panel: #0b1220;
+  --muted: #9aa5b1;
+  --accent: #5eead4; /* teal accent */
+  --accent-2: #60a5fa; /* blue accent for gradients */
+  --text: #e6eef3;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --shadow: 0 6px 24px rgba(2,6,23,0.6);
+  --glass-2: rgba(255,255,255,0.02);
+
+  /* timeline X position (center of the vertical line) */
+  --timeline-x: 60px;
+
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.06), transparent 8%),
+    radial-gradient(1000px 500px at 90% 90%, rgba(94,234,212,0.04), transparent 8%),
+    linear-gradient(180deg,#06121a 0%, #071224 30%, #071428 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size:16px;
+  line-height:1.5;
+}
+
+/* layout */
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-header{position:sticky;top:0;z-index:50;padding:14px 0;background:linear-gradient(180deg,rgba(6,11,20,0.6),transparent);backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.02)}
+.brand{display:flex;flex-direction:column}
+.brand-name{font-weight:700;font-size:18px;color:var(--text)}
+.brand-sub{font-size:13px;color:var(--muted)}
+
+.nav ul{display:flex;gap:8px;list-style:none;padding:0;margin:0;align-items:center}
+.nav a{display:inline-block;padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:600;cursor:pointer;transition:all .25s ease}
+.nav a:hover{color:var(--text);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+.nav a.active{color:var(--accent);box-shadow:0 6px 18px rgba(96,165,250,0.06);transform:translateY(-1px)}
+
+#theme-toggle{margin-left:12px;background:transparent;border:0;color:var(--muted);cursor:pointer;font-size:18px;padding:8px;border-radius:10px}
+#theme-toggle:hover{color:var(--text)}
+
+/* CV grid */
+.cv-grid{display:grid;grid-template-columns: 1fr 340px;gap:32px;align-items:start}
+.cv-left h2, .cv-right h2{margin-top:0; font-size:26px}
+.cv-right .accent{color:var(--accent)}
+
+/* Timeline styles - line passes through the marker center
+   Key changes:
+   - use --timeline-x as the center coordinate for the vertical line
+   - the .timeline-marker has a transparent background (so the line is visible through it)
+   - align marker to the line via calc(var(--timeline-x) - halfMarker)
+   - give explicit widths to line and marker to maintain exact centering
+*/
+.timeline{
+  position:relative;
+  padding-left:36px;
+  /* ensure stacking context for relative children */
+}
+
+/* vertical line: positioned by its left = --timeline-x (center line coordinate) */
+.timeline-line{
+  position:absolute;
+  left:var(--timeline-x);
+  top:8px;
+  bottom:8px;
+  width:2px; /* narrow line for crisp center through marker */
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  border-radius:2px;
+  opacity:0.95;
+  z-index:1; /* line sits behind markers */
+}
+
+/* Each timeline item is a separate stacking context so marker is relative to the item */
+.timeline-item{
+  position:relative;
+  padding:18px 18px 18px 108px;
+  margin-bottom:36px; /* spacing to avoid collisions */
+  min-height:56px;
+}
+
+/* Year label aligned to the left of each item */
+.timeline-year{
+  position:absolute;
+  left:0;
+  top:16px;
+  width:86px;
+  color:var(--accent-2);
+  font-weight:700;
+  font-size:14px;
+  z-index:3;
+}
+
+/* Marker: transparent center so the line shows through.
+   Marker width/height chosen so we can center with calc(var(--timeline-x) - halfWidth)
+*/
+.timeline-marker{
+  --marker-size:16px;
+  position:absolute;
+  left:calc(var(--timeline-x) - (var(--marker-size) / 2));
+  top:20px;  /* anchored relative to each item to prevent overlap */
+  width:var(--marker-size);
+  height:var(--marker-size);
+  border-radius:50%;
+
+  /* Transparent center so the vertical line is visible through the circle */
+  background:transparent;
+  border:3px solid #fff;
+  box-shadow:0 6px 14px rgba(2,6,23,0.5);
+  z-index:4; /* above the line */
+}
+
+/* Add a subtle inner ring if you want a softer contrast (optional) */
+/* .timeline-marker::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:50%;
+  height:50%;
+  border-radius:50%;
+  background:rgba(255,255,255,0.03);
+  pointer-events:none;
+} */
+
+.timeline-content h3{margin:0 0 6px 0;font-size:18px}
+.timeline-content p{margin:6px 0;color:var(--muted)}
+.timeline-content .meta{color:var(--muted);font-weight:600;margin-top:6px}
+
+/* Right column: skills */
+.skills{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.skill{display:flex;flex-direction:column;gap:8px}
+.skill-head{display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--text)}
+.skill-percent{color:var(--muted);font-weight:600;font-size:13px}
+.skill-bar{
+  height:12px;
+  background:rgba(255,255,255,0.04);
+  border-radius:8px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.02);
+}
+.skill-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  border-radius:8px;
+  transition:width 900ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* simple list */
+.simple-list{list-style:none;padding:0;margin:0;color:var(--muted)}
+.simple-list li{padding:6px 0}
+
+/* card baseline (keeps visual parity with other pages) */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.02)}
+/* responsive adjustments */
+
+@media (max-width:900px) {
+  .cv-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Mobile Timeline Variables */
+  :root {
+    --timeline-x: 24px; /* Moves line closer for mobile, adjust as needed */
+    --marker-size: 16px; /* Ensure this matches your actual marker size */
+  }
+
+  .timeline-line {
+    left: var(--timeline-x);
+    width: 2px;           /* Consider setting width for consistency */
+    transform: none;      /* Remove translateX for better alignment with small --timeline-x */
+    background: #2091fa;  /* Or your preferred color */
+  }
+
+  .timeline-item {
+    padding-left: 48px;  /* 2x --timeline-x, creates alignment between marker, line, and text */
+    margin-bottom: 32px; /* Increased space for legibility */
+  }
+
+  .timeline-year {
+    left: 0;
+    top: 6px;
+    font-size: 12px;
+  }
+
+  .timeline-marker {
+    left: calc(var(--timeline-x) - (var(--marker-size) / 2));
+    top: 14px; /* Adjust for marker vertical centering; tweak as needed */
+    width: var(--marker-size);
+    height: var(--marker-size);
+  }
+
+  .nav ul {
+    display: none;
+  }
+}
+
+
+/* small cosmetic improvements */
+.muted{color:var(--muted)}
+.meta{color:var(--muted);font-size:14px}
+
+/* ===== layout for cv rows (first and second pairs) ===== */
+.cv-grid,
+.cv-grid-two {
+  display: grid;
+  grid-template-columns: 1fr 340px; /* left column flexible, right column fixed */
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ensure the right column (aside) has consistent width and doesn't shrink */
+.cv-grid .cv-right,
+.cv-grid-two .cv-right {
+  max-width: 340px;
+}
+
+/* make sure left column uses full available width */
+.cv-grid .cv-left,
+.cv-grid-two .cv-left {
+  width: 100%;
+}
+
+/* small responsive tweak: stack on narrow screens */
+@media (max-width: 880px) {
+  .cv-grid,
+  .cv-grid-two {
+    grid-template-columns: 1fr;
+  }
+  .cv-grid .cv-right,
+  .cv-grid-two .cv-right {
+    max-width: none;
+  }
+}
+

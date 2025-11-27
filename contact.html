@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samit Pal — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" id="brand-link"><span class="brand-name">Samit Pal</span></a>
+        <div class="brand-sub">DST INSPIRE Research Fellow, IIT Indore</div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+          <li><a href="research.html" class="nav-link" data-page="research">Research</a></li>
+          <li><a href="publications.html" class="nav-link" data-page="publications">Publications</a></li>
+          <li><a href="conferences.html" class="nav-link" data-page="conferences">Conferences</a></li>
+          <li><a href="cv.html" class="nav-link" data-page="cv">CV</a></li>
+          <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" title="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Contact</h2>
+
+      <div class="card form-card">
+        <!-- Contact details (placed directly under the description as requested) -->
+        <section class="contact-section details">
+          <h2>Emails</h2>
+          <ul>
+            <li>Institute Email: <a href="mailto:phd2101121008@iiti.ac.in">phd2101121008@iiti.ac.in</a></li>
+            <li>Personal Email: <a href="mailto:palsamitkumar@gmail.com">palsamitkumar@gmail.com</a></li>
+          </ul>
+
+          <h2>Phone</h2>
+          <p><a href="tel:+919851055523">+91-9851055523</a></p>
+
+          <h2>Address</h2>
+          <address>
+            Indian Institute of Technology Indore<br />
+            Indore, Madhya Pradesh - 453552<br />
+            India
+          </address>
+
+          <h2>Online Profiles</h2>
+          <ul>
+            <li>LinkedIn: <a href="https://linkedin.com/in/samit-pal-8514ba220" target="_blank" rel="noopener">linkedin.com/in/samit-pal-8514ba220</a></li>
+            <li>GitLab: <a href="https://gitlab.com/samit-pal" target="_blank" rel="noopener">gitlab.com/samit-pal</a></li>
+          </ul>
+        </section>
+
+        <!-- Form and inline contact summary kept below the contact details -->
+        <form id="contact-form" action="#" onsubmit="return false;">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" placeholder="your@email" />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="6" placeholder="A short message"></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send</button>
+            <button class="btn outline" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> Samit Pal — <a href="cv.pdf">CV</a></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // populate the copyright year
+    document.addEventListener('DOMContentLoaded', function () {
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

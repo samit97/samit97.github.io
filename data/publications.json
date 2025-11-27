@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Example Paper Title: A Novel Method for X",
+    "authors": "Your Name, Collaborator A, Collaborator B",
+    "venue": "Journal of Important Research",
+    "year": "2024",
+    "url": "https://example.com/paper1"
+  },
+  {
+    "title": "Another Paper on Topic Y",
+    "authors": "Your Name, Collaborator C",
+    "venue": "Proceedings of Example Conference",
+    "year": "2023",
+    "url": ""
+  },
+  {
+    "title": "Short Paper about Z",
+    "authors": "Your Name",
+    "venue": "Workshop on Small Things",
+    "year": "2022",
+    "url": ""
+  }
+]

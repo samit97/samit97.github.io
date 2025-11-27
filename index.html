@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Samit Pal — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" id="brand-link"><span class="brand-name">Samit Pal</span></a>
+        <div class="brand-sub">DST INSPIRE Research Fellow, IIT Indore</div>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+          <li><a href="research.html" class="nav-link" data-page="research">Research</a></li>
+          <li><a href="publications.html" class="nav-link" data-page="publications">Publications</a></li>
+          <li><a href="conferences.html" class="nav-link" data-page="conferences">Conferences</a></li>
+          <li><a href="cv.html" class="nav-link" data-page="cv">CV</a></li>
+          <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" title="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section aria-labelledby="home-title">
+      <div class="hero">
+        <div class="hero-left">
+          <h1 id="home-title"> Samit Pal </h1>
+          <p class="subtitle"> DST INSPIRE Research Fellow, IIT Indore </p>
+          <p class="summary" id="summary">
+          I am Samit Pal, a researcher in radio astronomy and cosmology, specializing in the detection and analysis of the HI 21-cm signal from the Epoch of Reionization (EoR). 
+          My work focuses on understanding how instrumental effects, calibration errors, and ionospheric distortions affect the recovery of cosmological information from low-frequency radio interferometers such as SKA1-Low.
+          I develop and employ simulation, calibration, and data analysis pipelines using tools like OSKAR, EveryBeam, QuartiCal, and CASA, integrated within Singularity and Docker environments for reproducible large-scale processing.
+          My research combines numerical modeling, statistical inference, and computational optimization to evaluate and mitigate systematic effects in 21-cm cosmology. 
+          Broadly, my interests lie at the intersection of cosmology, instrumentation, and data science, with the goal of enhancing the scientific readiness of next-generation radio telescopes and improving our understanding of the early Universe through precision 21-cm measurements.
+          </p>
+          <div class="brand-research">
+            Observational cosmology: Epoch of Reionization — HI 21cm cosmology — simulation, modeling, observations, and data analysis<br>
+            Radio astronomy: calibration effects and imaging in radio interferometry
+          </div>
+          <div class="hero-ctas">
+            <a class="btn primary" href="research.html">See Research</a>
+            <a class="btn outline" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="card profile-card">
+            <img src="assets/profile-placeholder.png" alt="Profile photo" class="profile-photo" />
+            <div class="profile-meta">
+              <div class="meta-row"><strong>Current role</strong><span id="meta-role"> Senior Reseach Scholar</span></div>
+              <div class="meta-row"><strong>Email</strong><a id="meta-email" href="mailto:palsamitkumar@gmail.com">
+                palsamitkumar@gmail.com
+              </a></div>
+              <div class="meta-row"><strong>Location</strong><span id="meta-location"> Indore, MP, India</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> Samit Pal — <a href="cv.pdf">CV</a></div>
+      <div class="footer-links">
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

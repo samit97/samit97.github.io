@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samit Pal — CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" id="brand-link"><span class="brand-name">Samit Pal</span></a>
+        <div class="brand-sub">DST INSPIRE Research Fellow, IIT Indore</div>
+      </div> <!-- ✅ Added missing closing div for .brand -->
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+          <li><a href="research.html" class="nav-link" data-page="research">Research</a></li>
+          <li><a href="publications.html" class="nav-link" data-page="publications">Publications</a></li>
+          <li><a href="conferences.html" class="nav-link" data-page="conferences">Conferences</a></li>
+          <li><a href="cv.html" class="nav-link" data-page="cv">CV</a></li>
+          <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" title="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="cv-grid">
+      <!-- Left column: Education timeline -->
+      <div class="cv-left">
+        <h2>Education</h2>
+
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <!-- Doctorate -->
+          <article class="timeline-item">
+            <div class="timeline-year">2021 — Present</div>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3>Doctorate of Philosophy (Ph.D.)</h3>
+              <p class="muted">Department of Astronomy, Astrophysics, and Space Engineering<br/>
+              Indian Institute of Technology Indore, Madhya Pradesh, India</p>
+              <p class="muted">Supervisor: Prof. Abhirup Datta</p>
+              <p>Thesis: Precision Radio Cosmology Observations — Requirements and Forecasts</p>
+              <p class="meta">CGPA: 8.6/10</p>
+            </div>
+          </article>
+
+          <!-- Masters -->
+          <article class="timeline-item">
+            <div class="timeline-year">2018 — 2020</div>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3>Master of Science (Physics)</h3>
+              <p class="muted">Visva-Bharati University, West Bengal, India</p>
+              <p class="meta">CGPA: 8.06/10</p>
+            </div>
+          </article>
+
+          <!-- Bachelors -->
+          <article class="timeline-item">
+            <div class="timeline-year">2015 — 2018</div>
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <h3>Bachelor of Science (Physics)</h3>
+              <p class="muted">Visva-Bharati University, West Bengal, India</p>
+              <p class="meta">CGPA: 7.78/10</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Right column: Skills, Languages, Hobbies -->
+      <aside class="cv-right">
+        <h2>Coding Skills</h2>
+
+        <div class="skills">
+          <div class="skill">
+            <div class="skill-head">
+              <span>Python</span>
+              <span class="skill-percent" aria-hidden="true">85%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85" data-percent="85">
+              <div class="skill-fill" style="width:0%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-head">
+              <span>C / C++</span>
+              <span class="skill-percent" aria-hidden="true">60%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" data-percent="60">
+              <div class="skill-fill" style="width:0%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-head">
+              <span>HTML / CSS</span>
+              <span class="skill-percent" aria-hidden="true">60%</span>
+            </div>
+            <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" data-percent="60">
+              <div class="skill-fill" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Participation &amp; Outreach</h2>
+        <ul class="simple-list">
+          <li>Participated in SKA Data Challenge 3 (SDC3) as a member of the Akashganga team for SDC3a and the Historian team for SDC3b.</li>
+          <li>Volunteered at the URSI Regional Conference on Radio Science, 2022, hosted by IIT Indore.</li>
+          <li>Volunteered at the Astronomical Society of India (ASI) Meeting, 2023, hosted by IIT Indore.</li>
+          <li>Teaching Assistant at RADIOCOSCON School, ICTS Bengaluru, April 2025.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Teaching Assistance (left) -->
+    <div class="cv-left teaching-assist" aria-label="Teaching assistance">
+      <h2>Teaching Assistance</h2>
+
+      <div class="timeline">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <article class="timeline-item">
+          <div class="timeline-year">Autumn 2022</div>
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h3>AA 201: Introduction to Astronomy</h3>
+            <p class="muted">IIT Indore — Teaching Assistant</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-year">Spring 2023</div>
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h3>AA 474N / 674N: Radio Astronomy</h3>
+            <p class="muted">IIT Indore — Teaching Assistant</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-year">Autumn 2023</div>
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h3>AA 411 / 611: Advanced Optics</h3>
+            <p class="muted">IIT Indore — Teaching Assistant</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Participation & Outreach (right) -->
+    <aside class="cv-right participation" aria-label="Participation and outreach">
+      <h2>Languages</h2>
+      <ul class="simple-list">
+        <li>English — Professional</li>
+        <li>Bengali — Native</li>
+        <li>Hindi — Conversational</li>
+      </ul>
+
+      <h2>Hobbies</h2>
+      <ul class="simple-list">
+        <li>Playing Badminton</li>
+        <li>Trekking</li>
+        <li>Listening to Music</li>
+        <li>Solving Sudoku</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> Samit Pal — <a href="cv.pdf">CV</a></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
